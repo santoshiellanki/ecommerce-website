@@ -1,0 +1,130 @@
+
+body {background:white;padding:0;margin:0;background-color:white}
+
+.main_wrapper{
+	
+	width:auto;
+	height:auto;
+	margin:auto;
+	
+}
+.header_wrapper{
+	
+	width:1000px;
+	height:200px;
+	
+	
+}
+
+
+
+.menubar{
+	width:1270px;
+	height:38;
+	
+	color:black;
+	
+}
+
+#menu{
+	
+ 	padding:0;
+	margin:0;
+	line-height:25px;
+	color:red;
+	background:black;
+	
+	
+}
+#menu li{
+	list-style:none;
+	display:inline;
+}
+
+#menu a{
+	text-decoration:none;
+	color:white;
+	padding:8px;
+	margin:5px;
+	font-size:18px;
+	font-family:TIMES NEW ROMAN;
+}
+
+#menu a:hover
+{color:orange; font-weight:bolder; text-decoration:underline;}
+
+#form { float:right;line-height:25px; }
+
+.content_wrapper{
+	width:1000px;
+	margin:0;
+	background:white;
+	
+}
+#content_area{
+	width:790px;
+	float:right;
+	background:white;
+}
+#sidebar{
+        padding-top:100px;
+	width:210px;
+	float:left;
+	background:black;
+	height:100%;
+	
+	
+
+	
+}
+#sidebar_title{
+	background:black;
+	color:white;
+	font-size:22px;
+	font-family:arial;
+	padding:6px;
+}
+#cats{
+	text-align:center;
+	margin-height:auto;
+}
+#cats li{
+	list-style:none;
+	margin:20px;
+	text-align:center;
+}
+#cats a{color:white;padding:10px;margin:5px;text-align:center;font-size:16px;font-family:TIMES NEW ROMAN;text-decoration:none;}
+
+
+#cats a:hover{
+
+color:orange;
+	font-weight:bolder;
+	text-decoration:underline;
+}
+
+
+#products_box{
+
+width:780px;
+text-align:center;
+margin-left:30px;
+margin-bottom:10px;
+}
+
+
+#single_product{float:left;margin-left:30px;padding:10px;}
+
+#single_product img{border:2px solid black;}
+	
+
+#shopping_cart{float:right; width:1265px;height:40px;background:black;color:white;margin:0}
+
+#footer{
+	width:100%;
+	height:60px;
+	
+	clear:both;
+}
+
+#image3{float:right;}
