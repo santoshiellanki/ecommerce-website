@@ -1,115 +1,62 @@
 <?php
-session_save_path("/home/ellankis1/logs");
+session_save_path("/home/ellankis1/logs/logs2");
 session_start();
-include("functions/functions.php");
-if(!isset($_SESSION['customer_email'])){
-echo "<script>window.open('customer_login.php? not_customer = You are not a customer.','_self')</script>";
+if(!isset($_SESSION['admin_name'])){
+echo "<script>window.open('admin_login.php? not_adminstrator = You are not an administartor.','_self'</script>";
 }
 else
 {
 ?>
+
+
 <!DOCTYPE>
 <html>
-    <head> 
-    
-        <title> South Asian Handicrafts </title>
-	 <link rel="stylesheet" href="styles/style1.css">
-	<style>
-	 
-	</style>
-		
-    </head>
-<body>
-
+ <head>
+  <title> This is Admin Panel</title>
+  <style>
+  .insert{height:100px;width:150px;background-color:"#F4F6F8";}
+  .main_wrapper{padding-left:300px;padding-top:30px;}
+  #manage{padding-top:80px;padding-right:200px}
+  .insert.hover{text-decoration:underline;}
+  #logout{padding-top:10px;padding-left:1000px}
+  </style>
   
-     <div class="header_wrapper"> 
-         <h1 id="Heading">South Asian Handicrafts</h1>
-        
-	 
-	</div> 
+ </head>
+ 
+ <body>
+  <div id="logout"><a href="admin_logout.php?">Admin Logout</a></div>
+ <h2 id="manage" style="text-align:center;">Manage Content</h2>
+ <div class="main_wrapper">
+ 
+ <div id="header"></div>
+ <div id="right"> 
 
+ 
+ <a href="index.php?view_customers"><Button class="insert">View Customers</Button></a>
+ <a href="index.php?employee_register"><Button class="insert">Employee Registeration</Button></a>
+ <a href="index.php?view_employee"><Button class="insert">View Employee</Button></a>
+ 
+ 
+ </div>
 
-    <div class="menubar"> 
-		<ul id="menu">
-			<li><a href="index.php">Home</a></li>
-			<li><a href="MyAccount.php"> MyAccount</a></li>	
-				<div id="form">
-		<form method="get" action="results.php" enctype="multipart/form-data">
-			<input type="text" name="user_query" placeholder="Search a Product"/>
-			<input type="submit" name="search" value="Search"/>
-				
-		</form>
-                    
-		
-	</div>			
-            </ul>
-			<?php cart(); ?>
-			
-	  <div id="shopping_cart">
-	    <span style="float:right;font-size:18px;">
-	    <?php
-	    if(isset($_SESSION['customer_email'])){
-            echo"<b>Welcome: </b>" . $_SESSION['customer_email'];
-            }
-            else{
-            echo"<b>Welcome Guest:</b>";
-            }
-	    ?>
-	    
-	 
-	    
-	    
-	    <a href="cart.php">Shopping Cart</a> 
-	    <a href="logout.php"> Logout </a>
-	    
-	    </span>
-	    
-	   </div>
-	    
-	   
-			
-		
-	
-	
-
-	</div>
-
-  
-   <div class="content_wrapper"> 
-	   <div id="content_area">
-	   
-	   <?php $ip=getIp(); ?>
-	   
-	   <div id="products_box">
-	   <?php getPro(); ?>
-	   <?php getCatPro(); ?> 
-	   
-	   </div>
-	   </div>
-	  
-	  
-	   
-	   <div id="sidebar">
-		   
-		   <div id="sidebar_title">Categories</div>
-		   <ul id="cats">
-			        <?php getCats();?>
-			        
-				   
-			   </ul>
-			  
-			   
-			   
-		</div>   
-	   	
-	  
-</div>
-
-   <div id="footer"> <h2 style="text-align:center">&copy; 2016 by South Asian Handicrafts</h2>
-   </div>
-
+ 
+ <div id="left">
+ <?php
+ 
+ if(isset($_GET['view_customers'])){
+ include("view_customers.php");
+ }
+if(isset($_GET['employee_register'])){
+ include("employee_register.php");
+ }
+if(isset($_GET['view_employee'])){
+ include("view_employee.php");
+ }
+ 
+ ?>
+ 
   </div>
-
-</body>
-</html>
+ 
+ </body> 
+ </html>
  <?php } ?>
